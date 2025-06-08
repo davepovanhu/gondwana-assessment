@@ -1,0 +1,9 @@
+{
+  "name": "php-api-assignment",
+  "image": "mcr.microsoft.com/devcontainers/php:8.1",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "forwardPorts": [8000],
+  "postCreateCommand": "composer install"
+}
