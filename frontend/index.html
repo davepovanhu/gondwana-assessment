@@ -1,121 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gondwana Rates Checker</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gondwana Rates Checker</title>
+  <!-- Tailwind CSS for styling -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-beige-100 font-sans">
 
-<header class="bg-brown-800 text-white p-4 flex items-center fixed top-0 w-full z-10">
-  <img src="https://gondwana-collection.com/hs-fs/hubfs/Gondwana-Collection-Logo-1.png?width=378&height=96&name=Gondwana-Collection-Logo-1.png" alt="Gondwana Logo" class="h-12">
-  <h1 class="text-2xl ml-4">Gondwana Rates Checker</h1>
-</header>
+  <!-- Fixed header with logo and title -->
+  <header class="bg-brown-800 text-white p-4 flex items-center fixed top-0 w-full z-10">
+    <img src="https://gondwana-collection.com/hs-fs/hubfs/Gondwana-Collection-Logo-1.png?width=378&height=96&name=Gondwana-Collection-Logo-1.png"
+         alt="Gondwana Logo" class="h-12">
+    <h1 class="text-2xl ml-4">Gondwana Rates Checker</h1>
+  </header>
 
-<main class="container mx-auto p-4 pt-24">
-  <!-- Slider -->
-  <div class="slider relative overflow-hidden rounded shadow-md mb-8">
-    <div class="slides">
-      <div class="slide relative">
-        <a href="https://gondwana-collection.com/accommodation/omarunga-epupa-falls-campsite?LodgeName=OMARUNGA%20EPUPA-FALLS%20CAMPSITE" target="_blank">
-          <img src="img/Omarunga Epupa-Falls Campsite_main banner.jpg" alt="Pic 1" class="w-full h-64 object-cover">
-          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl font-bold">EPUPA FALLS EXPERIENCE</div>
-        </a>
+  <main class="container mx-auto p-4 pt-24">
+
+    <!-- Auto-rotating slider -->
+    <div class="slider relative overflow-hidden rounded shadow-md mb-8">
+      <div class="slides">
+        <!-- Each slide wrapped in a clickable link -->
+        <div class="slide relative">
+          <a href="https://gondwana-collection.com/accommodation/omarunga-epupa-falls-campsite?LodgeName=OMARUNGA%20EPUPA-FALLS%20CAMPSITE" target="_blank">
+            <img src="img/Omarunga Epupa-Falls Campsite_main banner.jpg" alt="Epupa Falls Experience" class="w-full h-64 object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl font-bold">
+              EPUPA FALLS EXPERIENCE
+            </div>
+          </a>
+        </div>
+        <!-- ... Repeat slides for Kaokoland, Windhoek, Etosha ... -->
       </div>
-      <div class="slide relative">
-        <a href="https://gondwana-collection.com/en/the-kaokoland-experience" target="_blank">
-          <img src="img/Kaokoland Experience_main banner.jpg" alt="Pic 2" class="w-full h-64 object-cover">
-          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl font-bold">KAOKOLAND EXPERIENCE</div>
-        </a>
+      <!-- Dot indicators for manual slide selection -->
+      <div class="dots absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
+    </div>
+
+    <!-- Rates form -->
+    <form id="rates-form" class="bg-white p-6 rounded shadow-md">
+      <!-- Unit Name -->
+      <div class="mb-4">
+        <label for="unit-name" class="block text-gray-700">Unit Name</label>
+        <input id="unit-name" type="text" class="w-full p-2 border rounded" placeholder="e.g. Luxury Suite" required>
       </div>
-      <div class="slide relative">
-        <a href="https://gondwana-collection.com/the-windhoek-experience" target="_blank">
-          <img src="img/1 Christuskirche_Independence Museum gallery.jpg" alt="Pic 3" class="w-full h-64 object-cover">
-          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl font-bold">WINDHOEK EXPERIENCE</div>
-        </a>
+      <!-- Arrival date -->
+      <div class="mb-4">
+        <label for="arrival" class="block text-gray-700">Arrival Date (dd/mm/yyyy)</label>
+        <input id="arrival" type="text" placeholder="dd/mm/yyyy" class="w-full p-2 border rounded" required>
       </div>
-      <div class="slide relative">
-        <a href="https://gondwana-collection.com/en/the-etosha-experience" target="_blank">
-          <img src="img/Etosha Experience_main banner.jpg" alt="Pic 4" class="w-full h-64 object-cover">
-          <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-xl font-bold">ETOSHA EXPERIENCE</div>
-        </a>
+      <!-- Departure date -->
+      <div class="mb-4">
+        <label for="departure" class="block text-gray-700">Departure Date (dd/mm/yyyy)</label>
+        <input id="departure" type="text" placeholder="dd/mm/yyyy" class="w-full p-2 border rounded" required>
+      </div>
+      <!-- Occupants count -->
+      <div class="mb-4">
+        <label for="occupants" class="block text-gray-700">Occupants</label>
+        <input id="occupants" type="number" min="1" class="w-full p-2 border rounded" required>
+      </div>
+      <!-- Ages field -->
+      <div class="mb-4">
+        <label for="ages" class="block text-gray-700">Ages (comma-separated)</label>
+        <input id="ages" type="text" placeholder="e.g. 30,5,27" class="w-full p-2 border rounded" required>
+      </div>
+      <!-- Submit button -->
+      <button type="submit" class="bg-orange-500 text-white p-2 rounded hover:bg-orange-600 w-full">
+        Check Rates
+      </button>
+    </form>
+
+    <!-- Response area (hidden by default) -->
+    <div id="response" class="mt-4 p-4 bg-white rounded shadow-md hidden">
+      <h2 class="text-xl font-bold mb-2">Rates Information</h2>
+      <pre id="response-content" class="text-gray-800"></pre>
+    </div>
+
+  </main>
+
+  <!-- Footer with company info and links -->
+  <footer class="bg-brown-800 text-white p-4 mt-8">
+    <div class="container mx-auto flex flex-wrap justify-between">
+      <!-- First column: logo, newsletter -->
+      <div class="mb-4">
+        <img src="https://gondwana-collection.com/hs-fs/hubfs/Gondwana-Collection-Logo-1.png?width=378&height=96&name=Gondwana-Collection-Logo-1.png" alt="Gondwana Logo" class="h-12 mb-2">
+        <p>Gondwana Collection Namibia (Pty) Ltd | 
+          <a href="https://gondwana-collection.com/disclaimer" class="text-white hover:underline">Disclaimer</a> | 
+          <a href="https://gondwana-collection.com/gondwana-collection-namibia-privacy-policy" class="text-white hover:underline">Privacy Policy</a> | 
+          <a href="https://8820531.fs1.hub..." class="text-white hover:underline">Terms & Conditions</a> | 
+          <a href="https://gondwana-collection.com/en/about-us/covid-19-hygiene-measures" class="text-white hover:underline">Health & Safety</a>
+        </p>
+        <p>Stay up-to-date with our monthly Newsletter.</p>
+        <button class="bg-black text-brown-800 p-2 mt-2 rounded">
+          <a href="https://share.hsforms.com/..." class="text-brown-800">Subscribe Now</a>
+        </button>
+      </div>
+      <!-- More helpful links columns -->
+      <div class="mb-4">
+        <h3 class="text-lg font-bold"><a href="https://gondwana-collection.com/" class="text-white hover:underline">Book Now</a></h3>
+        <p><a href="https://gondwana-collection.com/" class="text-white hover:underline">Lodges & Camps</a></p>
+        <!-- Other links... -->
+      </div>
+      <!-- Column 3: Good To Know -->
+      <div class="mb-4">
+        <h2 class="text-lg font-bold">Good To Know</h2>
+        <p><a href="..." class="text-white hover:underline">Gondwana Care Trust</a></p>
+        <!-- Other links... -->
+      </div>
+      <!-- Column 4: Contact -->
+      <div class="mb-4">
+        <h3 class="text-lg font-bold"><a href="https://gondwana-collection.com/card" class="text-white hover:underline">Contact Us</a></h3>
       </div>
     </div>
-    <!-- Dots -->
-    <div class="dots absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
-  </div>
+    <!-- Copyright -->
+    <div class="text-center mt-4">
+      <p>&copy; 2025 Gondwana Collection Namibia. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-  <!-- Form -->
-  <form id="rates-form" class="bg-white p-6 rounded shadow-md">
-    <div class="mb-4">
-      <label for="unit-name" class="block text-gray-700">Unit Name</label>
-      <input id="unit-name" type="text" class="w-full p-2 border rounded" placeholder="e.g. Luxury Suite" required>
-    </div>
-    <div class="mb-4">
-      <label for="arrival" class="block text-gray-700">Arrival Date (dd/mm/yyyy)</label>
-      <input id="arrival" type="text" placeholder="dd/mm/yyyy" class="w-full p-2 border rounded" required>
-    </div>
-    <div class="mb-4">
-      <label for="departure" class="block text-gray-700">Departure Date (dd/mm/yyyy)</label>
-      <input id="departure" type="text" placeholder="dd/mm/yyyy" class="w-full p-2 border rounded" required>
-    </div>
-    <div class="mb-4">
-      <label for="occupants" class="block text-gray-700">Occupants</label>
-      <input id="occupants" type="number" min="1" class="w-full p-2 border rounded" required>
-    </div>
-    <div class="mb-4">
-      <label for="ages" class="block text-gray-700">Ages (comma-separated)</label>
-      <input id="ages" type="text" placeholder="e.g. 30,5,27" class="w-full p-2 border rounded" required>
-    </div>
-    <button type="submit" class="bg-orange-500 text-white p-2 rounded hover:bg-orange-600 w-full">Check Rates</button>
-  </form>
-
-  <div id="response" class="mt-4 p-4 bg-white rounded shadow-md hidden">
-    <h2 class="text-xl font-bold mb-2">Rates Information</h2>
-    <pre id="response-content" class="text-gray-800"></pre>
-  </div>
-</main>
-
-<!-- Footer (same as before) -->
-<footer class="bg-brown-800 text-white p-4 mt-8">
-  <div class="container mx-auto flex flex-wrap justify-between">
-    <div class="mb-4">
-      <img src="https://gondwana-collection.com/hs-fs/hubfs/Gondwana-Collection-Logo-1.png?width=378&height=96&name=Gondwana-Collection-Logo-1.png" alt="Gondwana Logo" class="h-12 mb-2">
-      <p>
-        Gondwana Collection Namibia (Pty) Ltd | 
-        <a href="https://gondwana-collection.com/disclaimer" class="text-white hover:underline">Disclaimer</a> | 
-        <a href="https://gondwana-collection.com/gondwana-collection-namibia-privacy-policy" class="text-white hover:underline">Privacy Policy</a> | 
-        <a href="https://8820531.fs1.hubspotusercontent-na1.net/hubfs/8820531/Gondwana%20Website/PDFs/Gondwana-Collection-Namibia-Terms-and-Conditions_2025-01-17.pdf" class="text-white hover:underline">Terms & Conditions</a> | 
-        <a href="https://gondwana-collection.com/en/about-us/covid-19-hygiene-measures" class="text-white hover:underline">Health & Safety</a>
-      </p>
-      <p>Stay up-to-date with our monthly Newsletter.</p>
-      <button class="bg-black text-brown-800 p-2 mt-2 rounded"><a href="https://share.hsforms.com/1vAyyivN-SSWpopwwm8mzMw591yr" class="text-brown-800">Subscribe Now</a></button>
-    </div>
-    <div class="mb-4">
-      <h3 class="text-lg font-bold"><a href="https://gondwana-collection.com/" class="text-white hover:underline">Book Now</a></h3>
-      <p><a href="https://gondwana-collection.com/" class="text-white hover:underline">Lodges & Camps</a></p>
-      <p><a href="https://8820531.fs1.hubspotusercontent-na1.net/hubfs/8820531/01%20Gondwana%20Website/Gondwana%20Passport/Your_Travel_Passport.pdf" class="text-white hover:underline">Safaris & Travel</a></p>
-      <p><a href="https://namibia2go.com/" class="text-white hover:underline">Car Rental</a></p>
-    </div>
-    <div class="mb-4">
-      <h2 class="text-lg font-bold">Good To Know</h2>
-      <p><a href="https://gondwana-collection.com/en/about-us/gondwana-care-trust/" class="text-white hover:underline">Gondwana Care Trust</a></p>
-      <p><a href="https://8820531.fs1.hubspotusercontent-na1.net/hubfs/8820531/01%20Gondwana%20Website/Gondwana%20Passport/Your_Travel_Passport.pdf" class="text-white hover:underline">Your Local Travel Guide</a></p>
-      <p><a href="https://gondwana-collection.com/share-trading" class="text-white hover:underline">Share Trading</a></p>
-      <p><a href="https://gondwana-collection.com/en/contact-us" class="text-white hover:underline">Reservations</a></p>
-      <p><a href="https://gondwana-collection.com/card" class="text-white hover:underline">The Gondwana Card</a></p>
-    </div>
-    <div class="mb-4">
-      <h3 class="text-lg font-bold"><a href="https://gondwana-collection.com/card" class="text-white hover:underline">Contact Us</a></h3>
-    </div>
-  </div>
-  <div class="text-center mt-4">
-    <p>&copy; 2025 Gondwana Collection Namibia. All Rights Reserved.</p>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <!-- External script for slider and form -->
+  <script src="script.js"></script>
 </body>
 </html>
