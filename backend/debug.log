@@ -1971,3 +1971,110 @@ Array
 
 )
 
+Sent to remote:
+{"Unit Type ID":-2147483637,"Arrival":"2025-05-09","Departure":"2025-05-16","Guests":[{"Age Group":"Adult"},{"Age Group":"Child"}]}
+Remote response:
+Array
+(
+    [Location ID] => -2147473614
+    [Total Charge] => 341250
+    [Extras Charge] => 0
+    [Booking Group ID] => Rate Check
+    [Rooms] => 2
+    [Legs] => Array
+        (
+            [0] => Array
+                (
+                    [Special Rate ID] => 1744830483
+                    [Effective Average Daily Rate] => 32500
+                    [Total Charge] => 227500
+                    [Deposit Rule ID] => -2147483643
+                    [Deposit Breakdown] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [Due Day] => 45786
+                                    [Due Amount] => 227500
+                                )
+
+                        )
+
+                    [Error Code] => 0
+                    [Guests] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [Age Group] => Adult
+                                    [Age] => 9
+                                    [Error Message] => No Member code
+                                    [Category] => STANDARD
+                                )
+
+                        )
+
+                    [Category] => STANDARD
+                    [Special Rate Description] => * STANDARD RATE CAMPING - Kalahari Farmhouse 
+                    [Special Rate Code] => JNKFH20CAP
+                    [Special Rate Requested ID] => 1744830483
+                    [Booking Client ID] => -2146822694
+                    [Adult Count] => 1
+                    [Child Ages] => Array
+                        (
+                        )
+
+                    [Extras] => Array
+                        (
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [Special Rate ID] => 1744830483
+                    [Effective Average Daily Rate] => 16250
+                    [Total Charge] => 113750
+                    [Deposit Rule ID] => -2147483643
+                    [Deposit Breakdown] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [Due Day] => 45786
+                                    [Due Amount] => 113750
+                                )
+
+                        )
+
+                    [Error Code] => 0
+                    [Guests] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [Age Group] => Child
+                                    [Age] => 9
+                                    [Error Message] => No Member code
+                                    [Category] => STANDARD
+                                )
+
+                        )
+
+                    [Category] => STANDARD
+                    [Special Rate Description] => * STANDARD RATE CAMPING - Kalahari Farmhouse 
+                    [Special Rate Code] => JNKFH20CAP
+                    [Special Rate Requested ID] => 1744830483
+                    [Booking Client ID] => -2146822694
+                    [Adult Count] => 0
+                    [Child Ages] => Array
+                        (
+                            [0] => 9
+                        )
+
+                    [Extras] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+)
+
